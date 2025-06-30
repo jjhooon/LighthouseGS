@@ -27,7 +27,7 @@ function RealSceneEvent(idx, selectorId, navId) {
     const sections = dics.getElementsByClassName('b-dics__section');
     const imagesLength = 5;
 
-    updateImages(sections, idx, imagesLength, 'object');
+    updateImages(sections, idx, imagesLength, 'object', 'real');
     updateTabStates(navId, idx);
 }
 
@@ -41,7 +41,7 @@ function SyntheticSceneEvent(idx, selectorId, navId) {
     const sections = dics.getElementsByClassName('b-dics__section');
     const imagesLength = 5;
 
-    updateImages(sections, idx, imagesLength, 'object');
+    updateImages(sections, idx, imagesLength, 'object', 'synthetic');
     updateTabStates(navId, idx);
 }
 
@@ -51,13 +51,19 @@ function SyntheticSceneEvent(idx, selectorId, navId) {
  * @param {number} idx - Index to determine the folder.
  * @param {number} imagesLength - Number of images to update.
  * @param {string} sliderType - Type of the slider (e.g., 'object').
+ * @param {string} dataType - Type of dataset (e.g., 'real', 'synthetic')
  */
-function updateImages(sections, idx, imagesLength, sliderType) {
+function updateImages(sections, idx, imagesLength, sliderType, dataType) {
     for (let i = 0; i < imagesLength; i++) {
         const imageContainer = sections[i]?.querySelector('.b-dics__image-container');
         const image = imageContainer?.querySelector('.b-dics__image');
         if (image) {
-            const imageFolder = getImageFolder(idx, sliderType);
+            let imageFolder;
+            if (dataType === 'real'){
+                imageFolder = getRealImageFolder(idx, sliderType);
+            } else if (dataType === 'synthetic') {
+                imageFolder = getSyntheticImageFolder(idx, sliderType);
+            }
             const imageFileName = getImageFileName(i, sliderType);
             image.src = `./static/images/comparisons/${imageFolder}/${imageFileName}`;
         }
