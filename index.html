@@ -96,7 +96,7 @@
             <span class="author-block"><sup>2</sup>Bucketplace</span>
           </div>
 
-          <div class="is-size-7 has-text-centered co-authors">
+          <div class="is-size-6 has-text-centered co-authors">
             <span class="author-block">(<sup>*</sup> equal contribution, <sup>&dagger;</sup> co-corresponding authors)</span>
           </div>
 
@@ -155,14 +155,14 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <img src="./static/images/lighthouseGS_teaser.png"
+        class="Overall framework"/>
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
-      </video>
+      </video> -->
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        LighthouseGS synthesizes photorealistic novel views from panorama-style captures using a single mobile device, providing a practical framework for indoor scenes.
       </h2>
     </div>
   </div>
@@ -209,7 +209,7 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Method. -->
-    <div class="columns is-centered">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-centered">
@@ -218,8 +218,9 @@
         </div>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+            <strong>Overview of LighthouseGS.</strong> Given consecutive images captured by panorama-style motion with the corresponding rough geometric priors, we construct the plane scaffold that ensures global and local consistency.
+            Then, we initialize 3D Gaussians to be aligned to scene geometry and optimize LighthouseGS with plane-aware stable optimization.
+            To address motion drift and auto-exposure by the use of mobile devices, we additionally correct camera poses and view-dependent colors.
           </p>
         </div>
       </div>
