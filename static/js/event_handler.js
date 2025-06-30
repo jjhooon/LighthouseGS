@@ -31,6 +31,20 @@ function RealSceneEvent(idx, selectorId, navId) {
     updateTabStates(navId, idx);
 }
 
+function SyntheticSceneEvent(idx, selectorId, navId) {
+    const dics = document.querySelectorAll('.b-dics')[selectorId];
+    if (!dics) {
+        console.error(`Dics container not found for selectorId: ${selectorId}`);
+        return;
+    }
+
+    const sections = dics.getElementsByClassName('b-dics__section');
+    const imagesLength = 5;
+
+    updateImages(sections, idx, imagesLength, 'object');
+    updateTabStates(navId, idx);
+}
+
 /**
  * Updates the images in the specified sections based on the index and slider type.
  * @param {HTMLCollection} sections - Collection of sections to update.
@@ -76,8 +90,13 @@ function updateTabStates(navId, activeIdx) {
  * @param {string} sliderType - Type of the slider (not used currently but reserved for future use).
  * @returns {string} Folder name.
  */
-function getImageFolder(idx, sliderType) {
+function getRealImageFolder(idx, sliderType) {
     const folders = ['meeting', 'dressing', 'pantry', 'lounge', 'conference'];
+    return folders[idx] || 'default';
+}
+
+function getSyntheticImageFolder(idx, sliderType) {
+    const folders = ['playroom', 'bedroom', 'primary_bedroom', 'living', 'studio'];
     return folders[idx] || 'default';
 }
 
