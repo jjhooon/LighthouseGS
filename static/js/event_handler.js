@@ -25,7 +25,7 @@ function RealSceneEvent(idx, selectorId, navId) {
     }
 
     const sections = dics.getElementsByClassName('b-dics__section');
-    const imagesLength = 3;
+    const imagesLength = 5;
 
     updateImages(sections, idx, imagesLength, 'object');
     updateTabStates(navId, idx);
