@@ -17,7 +17,7 @@ function initializeDics() {
  * @param {number} selectorId - ID of the selector.
  * @param {string} navId - Navigation element ID.
  */
-function objectSceneEvent(idx, selectorId, navId) {
+function RealSceneEvent(idx, selectorId, navId) {
     const dics = document.querySelectorAll('.b-dics')[selectorId];
     if (!dics) {
         console.error(`Dics container not found for selectorId: ${selectorId}`);
@@ -45,7 +45,7 @@ function updateImages(sections, idx, imagesLength, sliderType) {
         if (image) {
             const imageFolder = getImageFolder(idx, sliderType);
             const imageFileName = getImageFileName(i, sliderType);
-            image.src = `./static/images/results/${imageFolder}/${imageFileName}`;
+            image.src = `./static/images/comparisons/${imageFolder}/${imageFileName}`;
         }
     }
 }
@@ -77,7 +77,7 @@ function updateTabStates(navId, activeIdx) {
  * @returns {string} Folder name.
  */
 function getImageFolder(idx, sliderType) {
-    const folders = ['bicycle', 'garden', 'flowers', 'bonsai', 'room', 'train', 'truck'];
+    const folders = ['meeting', 'dressing', 'pantry', 'lounge', 'conference'];
     return folders[idx] || 'default';
 }
 
@@ -88,6 +88,6 @@ function getImageFolder(idx, sliderType) {
  * @returns {string} File name.
  */
 function getImageFileName(imageIndex, sliderType) {
-    const filenames = ['gs.png', 'ls.png', 'gt.png'];
+    const filenames = ['ours.png', '3dgs.png', 'dngaussian.png', 'scaffoldgs.png', 'geogaussian.png'];
     return filenames[imageIndex] || 'default.png';
 }

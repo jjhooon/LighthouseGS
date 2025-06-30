@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/favicon.ico">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -41,8 +41,8 @@
   <script src="./static/js/index.js"></script>
 
   <link rel="stylesheet" href="js/dics/dics.original.css">
-  <script src="js/dics/dics.original.js"></script>
-  <script src="js/event_handler.js"></script>
+  <script src="./static/js/dics.original.js"></script>
+  <script src="./static/js/event_handler.js"></script>
 </head>
 <body>
 
@@ -248,25 +248,27 @@
             <div class="container">
               <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
                     <li class="nav-item">
-                        <a class="nav-link active" onclick="objectSceneEvent(0)">building</a>
+                        <a class="nav-link active" onclick="RealSceneEvent(0)">Meeting room</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="objectSceneEvent(1)">matrixcity</a>
+                        <a class="nav-link" onclick="RealSceneEvent(1)">Dressing room</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="objectSceneEvent(2)">rubble</a>
+                        <a class="nav-link" onclick="RealSceneEvent(2)">Pantry</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="objectSceneEvent(3)">residence</a>
+                        <a class="nav-link" onclick="RealSceneEvent(3)">Lounge</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="objectSceneEvent(4)">sci-art</a>
+                        <a class="nav-link" onclick="RealSceneEvent(4)">Conference room</a>
                     </li>
                 </ul>
                 <div class="b-dics" style="width: 2600px; font-weight: 800;">
-                  <img src="resources/image/building/ours.png" alt="ours">
-                  <img src="resources/image/building/gs.png" alt="gs">
-                  <img src="resources/image/building/citygs.png" alt="citygs">
+                  <img src="./static/images/comparisons/meeting/ours.png" alt="LighthouseGS (Ours)">
+                  <img src="./static/images/comparisons/meeting/3dgs.png" alt="3DGS">
+                  <img src="./static/images/comparisons/meeting/dngaussian.png" alt="DNGaussian">
+                  <img src="./static/images/comparisons/meeting/scaffoldgs.png" alt="Scaffold-GS">
+                  <img src="./static/images/comparisons/meeting/geogaussian.png" alt="GeoGaussian">
               </div>
         </div>        
     </div>
